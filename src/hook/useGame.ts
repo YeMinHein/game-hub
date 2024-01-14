@@ -20,19 +20,24 @@ export interface Games {
   }const useGames = ()=>{
     const [games, setGames] = useState<Games[]>([]);
     const [error, setError] = useState("");
+    const [loding,Setloding] = useState(false);
     useEffect(() => {
+        Setloding(true);
         const controller = new AbortController;
       apiClient
         .get<FetchGamesReponse>("/games",{signal:controller.signal})
-        .then((res) => setGames(res.data.results))
+        .then((res) =>{ setGames(res.data.results);
+        Setloding(false)})
         .catch((err) => {
             if(err instanceof CanceledError) return;
-            setError(err.message)});
+            setError(err.message)
+        Setloding(false)
+        });
         
         return()=> controller.abort();
     },[]);
 
-    return {games,error}
+    return {games,error,loding}
 } 
 
 export default useGames;
