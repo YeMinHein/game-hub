@@ -17,7 +17,9 @@ export interface Games {
   interface FetchGamesReponse {
     count: number;
     results: Games[];
-  }const useGames = ()=>{
+  }
+  
+  const useGames = ()=>{
     const [games, setGames] = useState<Games[]>([]);
     const [error, setError] = useState("");
     const [loding,Setloding] = useState(false);
@@ -29,7 +31,7 @@ export interface Games {
         .then((res) =>{ setGames(res.data.results);
         Setloding(false)})
         .catch((err) => {
-            if(err instanceof CanceledError) return;
+             if(err instanceof CanceledError) return; 
             setError(err.message)
         Setloding(false)
         });
