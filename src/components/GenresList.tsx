@@ -22,7 +22,7 @@ const GenresList = ({ selectedGenre, onSelecGenre }: Props) => {
       <Heading fontSize="2xl" marginBottom={3}>
         Genres
       </Heading>
-      <List>
+      <List className="list-scroll">
         {data.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
             <HStack>
