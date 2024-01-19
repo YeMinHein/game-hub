@@ -1,0 +1,13 @@
+.scroll-container {
+    width: 100%; 
+    height: 300px; 
+    overflow-y: auto; 
+    overflow-x: auto;
+  }
+  
+  .list-scroll {
+    width: 100%; 
+    height: 350px;
+    overflow-y: auto; 
+    overflow-x: auto;
+  }
