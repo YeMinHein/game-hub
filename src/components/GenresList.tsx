@@ -9,7 +9,6 @@ import {
 } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hook/useGenres";
 import getCroppedImageUrl from "../services/image-url";
-import Scrollbar from "./Scrollbar";
 interface Props {
   onSelecGenre: (genre: Genre) => void;
   selectedGenre: Genre | null;
@@ -23,7 +22,7 @@ const GenresList = ({ selectedGenre, onSelecGenre }: Props) => {
       <Heading fontSize="2xl" marginBottom={3}>
         Genres
       </Heading>
-      <List className="scroll-list">
+      <List>
         {data.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
             <HStack>

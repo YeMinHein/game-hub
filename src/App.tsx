@@ -8,7 +8,6 @@ import PlatformSelector from "./components/PlatformSelector";
 import { platform } from "./hook/useGame";
 import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
-import ScrollBar from "./components/Scrollbar";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -34,7 +33,6 @@ function App() {
           onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
         />
       </GridItem>
-
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
           <GenresList
@@ -63,9 +61,7 @@ function App() {
             />
           </Flex>
         </Box>
-        <ScrollBar>
-          <GameGrid gameQuery={gameQuery} />
-        </ScrollBar>
+        <GameGrid gameQuery={gameQuery} />
       </GridItem>
     </Grid>
   );
