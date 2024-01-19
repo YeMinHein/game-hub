@@ -1,6 +1,5 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
-import React from "react";
-import { BsChevronBarDown } from "react-icons/bs";
+import { TriangleDownIcon } from "@chakra-ui/icons";
 interface Props {
   onSelectSortOrder: (SortOrder: string) => void;
   sortOrder: string;
@@ -20,7 +19,10 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
   );
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<BsChevronBarDown />}>
+      <MenuButton
+        as={Button}
+        rightIcon={<TriangleDownIcon boxSize={3} marginTop={1} />}
+      >
         Order By : {currentSortOrder?.label || "Relevance"}
       </MenuButton>
       <MenuList>
