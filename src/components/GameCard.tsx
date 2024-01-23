@@ -4,6 +4,7 @@ import { Games } from "../hook/useGame";
 import { Card, CardBody, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url";
 import Emojis from "./Emojis";
+import Like from "./LikeButton";
 interface Props {
   game: Games;
 }
@@ -21,6 +22,12 @@ const GameCard = ({ game }: Props) => {
           </HStack>
           <Heading fontSize={"2xl"}>
             {game.name}
+            <Like
+              onClick={() => {
+                game.id;
+                console.log(game.id);
+              }}
+            />
             <Emojis rating={game.rating_top} />
           </Heading>
         </CardBody>
